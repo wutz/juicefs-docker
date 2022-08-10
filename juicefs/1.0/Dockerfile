@@ -21,4 +21,9 @@ FROM ghcr.io/wutz/ceph:16.2-focal
 
 COPY --from=build /tmp/juicefs-1.0.0/juicefs.ceph /usr/local/bin/juicefs
 
+RUN set -eux; \
+	apt update; \
+	apt install -y fuse; \
+	rm -rf /var/lib/apt/lists/*
+
 ENTRYPOINT ["/usr/local/bin/juicefs"]
