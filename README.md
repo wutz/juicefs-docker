@@ -23,7 +23,7 @@ $ sudo docker run
          /jfs
 
 $ df -h /jfs
-``
+```
 
 > or using podman to run in rootless.
 
