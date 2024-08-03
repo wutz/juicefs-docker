@@ -4,7 +4,7 @@ RUN set -eux; \
 	apt update; \
 	apt install -y wget gnupg; \
 	wget -q -O- 'https://download.ceph.com/keys/release.asc' | apt-key add -; \
-	echo 'deb http://mirrors.ustc.edu.cn/ceph/debian-quincy/ jammy main' > /etc/apt/sources.list.d/ceph.list; \
+	echo 'deb http://mirrors.ustc.edu.cn/ceph/debian-reef/ jammy main' > /etc/apt/sources.list.d/ceph.list; \
     	apt update; \
 	apt install -y librados2 fuse; \
 	rm -rf /var/lib/apt/lists/*
@@ -13,8 +13,8 @@ FROM base as build
 
 ENV GOPROXY=https://goproxy.cn
 ENV PATH /usr/local/go/bin:$PATH
-ENV GOVERSION=go1.21.11
-ENV JFSVERSION=v1.1.2
+ENV GOVERSION=go1.22.5
+ENV JFSVERSION=v1.2.0
 
 WORKDIR /tmp
 

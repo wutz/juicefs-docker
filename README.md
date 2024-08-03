@@ -11,7 +11,7 @@ docker run \
     --rm \
     --net host \
     -v /etc/ceph:/etc/ceph \
-    ghcr.io/wutz/juicefs:1.1-quincy \
+    ghcr.io/wutz/juicefs:1.2-reef \
         format \
         --storage ceph \
         --bucket ceph://<pool-name> \
@@ -36,7 +36,7 @@ docker run
     -v /var/jfsCache:/var/jfsCache \
     --mount type=bind,source=/jfs,target=/jfs,bind-propagation=shared \
     --privileged \
-    ghcr.io/wutz/juicefs:1.1-quincy \
+    ghcr.io/wutz/juicefs:1.2-reef \
          mount \
          redis://<username>:<password>@<redis-server-ip>:6379/1 \
          /jfs

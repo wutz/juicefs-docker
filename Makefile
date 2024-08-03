@@ -1,5 +1,5 @@
 IMAGE := ghcr.io/wutz/juicefs
-TAG   := 1.1-quincy
+TAG   := 1.2-reef
 .PHONY: all
 all:
 	@echo "make image or push"
